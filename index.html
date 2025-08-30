@@ -6,42 +6,162 @@
 <title>Mason Day – Data Analytics Resume</title>
 <style>
   :root {
-    --bg:#ffffff;
-    --ink:#0f172a;
-    --muted:#475569;
-    --accent:#2563eb;
-    --chip:#e2e8f0;
-    --rule:#e5e7eb;
+    --bg: #ffffff;
+    --ink: #0f172a;      /* slate-900 */
+    --muted: #475569;    /* slate-600 */
+    --accent: #1f4ed8;   /* slightly toned-down blue */
+    --chip: #eef2f7;     /* light slate */
+    --rule: #e5e7eb;     /* gray-200 */
   }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0b1020;
-      --ink:#e5e7eb;
-      --muted:#9aa4b2;
-      --accent:#60a5fa;
-      --chip:#1f2937;
-      --rule:#1f2937;
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1020;
+      --ink: #e5e7eb;
+      --muted: #9aa4b2;
+      --accent: #7aa2ff;
+      --chip: #1f2937;
+      --rule: #1f2937;
     }
   }
-  body{background:var(--bg);color:var(--ink);margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;}
-  .page{max-width:1000px;margin:0 auto;padding:32px 20px 80px;}
-  h1{font-size:32px;margin:0;}
-  .role{color:var(--muted);font-weight:600;}
-  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;color:var(--muted);}
-  .meta a{color:var(--accent);text-decoration:none;}
-  .section{margin-top:26px;padding-top:14px;border-top:1px solid var(--rule);}
-  h2{font-size:15px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 10px;color:var(--muted);}
-  ul{margin:6px 0 0 18px;padding:0;}
-  li{margin:4px 0;}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-  .chip{background:var(--chip);border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted);}
-  .job,.edu,.project{margin-bottom:16px;}
-  .when{color:var(--muted);font-size:14px;}
-  .cta{position:sticky;bottom:18px;display:flex;justify-content:flex-end;margin-top:12px}
-  .btn{background:var(--accent);color:white;border:none;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}
-  .btn:active{transform:translateY(1px)}
-  @media print{.cta{display:none}}
+
+  /* Base typography & layout (slightly condensed for 1-page fit) */
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    font: 15px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 860px;           /* narrower for easier 1-page printing */
+    margin: 0 auto;
+    padding: 24px 18px 60px;    /* slightly tighter */
+  }
+
+  /* Header */
+  h1 {
+    font-size: 28px;            /* reduced from 32px */
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: .2px;
+  }
+  .role {
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+    color: var(--muted);
+  }
+  .meta a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .meta a:hover,
+  .meta a:focus {
+    text-decoration: underline;
+  }
+
+  /* Sections */
+  .section {
+    margin-top: 18px;           /* was 26px */
+    padding-top: 8px;           /* was 14px */
+    border-top: 1px solid var(--rule);
+  }
+  h2 {
+    font-size: 13px;            /* slightly smaller, all-caps feel */
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin: 0 0 8px;
+    color: var(--muted);
+  }
+
+  /* Lists & spacing */
+  ul {
+    margin: 4px 0 0 16px;
+    padding: 0;
+  }
+  li {
+    margin: 2px 0;
+  }
+
+  /* Chips (skills) */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .chip {
+    background: var(--chip);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  /* Entries */
+  .job, .edu, .project {
+    margin-bottom: 10px;        /* tighter block spacing */
+  }
+  .when {
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Call-to-action (Print to PDF) */
+  .cta {
+    position: sticky;
+    bottom: 16px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Responsive grid helper */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 760px) {
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Print styles: force single page where possible, remove colors/links styling */
+  @media print {
+    html, body { background: #fff; color: #000; }
+    a, a:visited { color: #000; text-decoration: none; }
+    .cta { display: none !important; }
+    /* Avoid breaking in the middle of important blocks */
+    .section, .job, .edu, .project { break-inside: avoid; page-break-inside: avoid; }
+    .page { padding: 12mm 10mm; max-width: 100%; }
+    h1 { font-size: 26px; }
+  }
 </style>
+
 </head>
 <body>
 <div class="page">
