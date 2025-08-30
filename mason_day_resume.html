@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mason Day – Data Analytics Resume</title>
+<style>
+  :root {
+    --bg:#ffffff;
+    --ink:#0f172a;
+    --muted:#475569;
+    --accent:#2563eb;
+    --chip:#e2e8f0;
+    --rule:#e5e7eb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0b1020;
+      --ink:#e5e7eb;
+      --muted:#9aa4b2;
+      --accent:#60a5fa;
+      --chip:#1f2937;
+      --rule:#1f2937;
+    }
+  }
+  body{background:var(--bg);color:var(--ink);margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial;}
+  .page{max-width:1000px;margin:0 auto;padding:32px 20px 80px;}
+  h1{font-size:32px;margin:0;}
+  .role{color:var(--muted);font-weight:600;}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;color:var(--muted);}
+  .meta a{color:var(--accent);text-decoration:none;}
+  .section{margin-top:26px;padding-top:14px;border-top:1px solid var(--rule);}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 10px;color:var(--muted);}
+  ul{margin:6px 0 0 18px;padding:0;}
+  li{margin:4px 0;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{background:var(--chip);border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted);}
+  .job,.edu,.project{margin-bottom:16px;}
+  .when{color:var(--muted);font-size:14px;}
+  .cta{position:sticky;bottom:18px;display:flex;justify-content:flex-end;margin-top:12px}
+  .btn{background:var(--accent);color:white;border:none;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer}
+  .btn:active{transform:translateY(1px)}
+  @media print{.cta{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Mason Day</h1>
+    <div class="role">Entry-Level Data Analyst</div>
+    <div class="meta">
+      <span>Atlanta, GA</span> •
+      <a href="tel:+17722247015">772-224-7015</a> •
+      <a href="mailto:masonjar31803@gmail.com">masonjar31803@gmail.com</a> •
+      <a href="https://github.com/Mason-Day-Cs">github.com/Mason-Day-Cs</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p>Detail-oriented Computer Science graduate from Florida State University with projects in SQL, Excel, and Tableau. Skilled in cleaning messy data, writing SQL queries, and building dashboards to communicate insights. Actively seeking an entry-level Data Analyst role.</p>
+  </section>
+
+  <section class="section">
+    <h2>Technical Skills</h2>
+    <div class="chips">
+      <div class="chip">SQL</div>
+      <div class="chip">Excel (PivotTables, VLOOKUP)</div>
+      <div class="chip">Tableau</div>
+      <div class="chip">Python (pandas)</div>
+      <div class="chip">Data Visualization</div>
+      <div class="chip">Data Cleaning</div>
+      <div class="chip">Git/GitHub</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Netflix Titles Exploration <span class="when">(GitHub)</span></h3>
+      <ul>
+        <li>Queried 82k+ titles with SQL and Excel to identify trends.</li>
+        <li>Built a Tableau dashboard to visualize genre popularity and release patterns.</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Global Retail Sales Dashboard <span class="when">(GitHub)</span></h3>
+      <ul>
+        <li>Cleaned 5k+ sales records, analyzed 4 years of data in Excel.</li>
+        <li>Interactive Tableau dashboard highlighted 15% YoY growth and top 10 SKUs driving 40% revenue.</li>
+      </ul>
+    </div>
+    <div class="project">
+      <h3>Digital Music Store Analysis <span class="when">(GitHub)</span></h3>
+      <ul>
+        <li>Queried customer/track data with SQL, identified top genres and customer spend trends.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <div class="edu">
+      <h3>Florida State University</h3>
+      <div>B.A. Computer Science • 2021–2024</div>
+    </div>
+    <div class="edu">
+      <h3>Indian River State College</h3>
+      <div>A.A. Multimedia • 2019–2021</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Experience (Transferable)</h2>
+    <div class="job">
+      <h3>The Monroe • Bartender <span class="when">Jul 2024 – Jul 2025</span></h3>
+      <ul>
+        <li>Tracked inventory and cash with near-zero errors.</li>
+        <li>Collaborated in a high-volume team to deliver consistent service.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Takko Korean Taqueria • Bartender <span class="when">Aug 2023 – Jun 2024</span></h3>
+      <ul>
+        <li>Balanced bartending and serving duties in a high-volume environment.</li>
+        <li>Introduced original cocktails that became customer favorites.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="cta">
+    <button class="btn" onclick="window.print()">Save as PDF</button>
+  </div>
+</div>
+</body>
+</html>
