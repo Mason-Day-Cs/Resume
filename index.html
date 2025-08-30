@@ -7,46 +7,35 @@
 <style>
   :root {
     --bg: #ffffff;
-    --ink: #1a1a1a;       /* near-black text */
-    --muted: #555555;     /* muted gray */
-    --accent: #0a3d62;    /* deep navy blue */
-    --chip: #f2f4f7;      /* very light gray for skill chips */
-    --rule: #dcdcdc;      /* light gray rules */
+    --ink: #1a1a1a;       /* primary text */
+    --muted: #555555;     /* subtle gray */
+    --accent: #000000;    /* keep links black for professional look */
+    --chip: #f4f4f4;      /* light gray background for skill chips */
+    --rule: #dcdcdc;      /* divider lines */
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0e0e0e;
-      --ink: #eaeaea;
-      --muted: #aaaaaa;
-      --accent: #4a90e2;   /* softer blue for dark mode */
-      --chip: #1f1f1f;
-      --rule: #333333;
-    }
-  }
-
-  /* Base typography & layout (slightly condensed for 1-page fit) */
+  /* Base typography & layout */
   html, body {
     background: var(--bg);
     color: var(--ink);
     margin: 0;
-    font: 15px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+    font: 15px/1.4 "Segoe UI", Roboto, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   .page {
-    max-width: 860px;           /* narrower for easier 1-page printing */
+    max-width: 860px;
     margin: 0 auto;
-    padding: 24px 18px 60px;    /* slightly tighter */
+    padding: 24px 18px 60px;
   }
 
   /* Header */
   h1 {
-    font-size: 28px;            /* reduced from 32px */
-    line-height: 1.15;
+    font-size: 28px;
     margin: 0;
+    font-weight: 700;
     letter-spacing: .2px;
+    color: var(--ink);
   }
   .role {
     color: var(--muted);
@@ -59,24 +48,24 @@
     gap: 8px;
     margin-top: 6px;
     color: var(--muted);
+    font-size: 14px;
   }
   .meta a {
-    color: var(--accent);
+    color: var(--ink); /* keep links looking like text */
     text-decoration: none;
   }
-  .meta a:hover,
-  .meta a:focus {
+  .meta a:hover {
     text-decoration: underline;
   }
 
   /* Sections */
   .section {
-    margin-top: 18px;           /* was 26px */
-    padding-top: 8px;           /* was 14px */
+    margin-top: 18px;
+    padding-top: 8px;
     border-top: 1px solid var(--rule);
   }
   h2 {
-    font-size: 13px;            /* slightly smaller, all-caps feel */
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: .14em;
     margin: 0 0 8px;
@@ -84,21 +73,11 @@
   }
 
   /* Lists & spacing */
-  ul {
-    margin: 4px 0 0 16px;
-    padding: 0;
-  }
-  li {
-    margin: 2px 0;
-  }
+  ul { margin: 4px 0 0 16px; padding: 0; }
+  li { margin: 2px 0; }
 
   /* Chips (skills) */
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 4px;
-  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
   .chip {
     background: var(--chip);
     border-radius: 999px;
@@ -110,58 +89,31 @@
   }
 
   /* Entries */
-  .job, .edu, .project {
-    margin-bottom: 10px;        /* tighter block spacing */
-  }
-  .when {
-    color: var(--muted);
-    font-size: 13px;
-    white-space: nowrap;
-  }
+  .job, .edu, .project { margin-bottom: 10px; }
+  .when { color: var(--muted); font-size: 13px; white-space: nowrap; }
 
   /* Call-to-action (Print to PDF) */
-  .cta {
-    position: sticky;
-    bottom: 16px;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-  }
+  .cta { position: sticky; bottom: 16px; display: flex; justify-content: flex-end; margin-top: 10px; }
   .btn {
-    background: var(--accent);
-    color: #fff;
+    background: #000000;
+    color: #ffffff;
     border: none;
-    border-radius: 8px;
-    padding: 9px 12px;
+    border-radius: 6px;
+    padding: 8px 12px;
     font-weight: 600;
     cursor: pointer;
   }
-  .btn:active {
-    transform: translateY(1px);
-  }
 
-  /* Responsive grid helper */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  @media (min-width: 760px) {
-    .grid-2 { grid-template-columns: 1fr 1fr; }
-  }
-
-  /* Print styles: force single page where possible, remove colors/links styling */
+  /* Print styles */
   @media print {
     html, body { background: #fff; color: #000; }
-    a, a:visited { color: #000; text-decoration: none; }
+    a { color: #000; text-decoration: none; }
     .cta { display: none !important; }
-    /* Avoid breaking in the middle of important blocks */
     .section, .job, .edu, .project { break-inside: avoid; page-break-inside: avoid; }
     .page { padding: 12mm 10mm; max-width: 100%; }
     h1 { font-size: 26px; }
   }
 </style>
-
 </head>
 <body>
 <div class="page">
