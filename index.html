@@ -226,40 +226,8 @@
   </section>
 
 <div class="cta">
-  <button class="btn" onclick="downloadResumePDF()">Download PDF</button>
+  <a class="btn" href="./resume.pdf" download="Mason_Day_Resume.pdf">Download PDF</a>
 </div>
-
 </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNa5F3r8d3o8J6y2e3y5H3mQX6k5dVJt8wqS0i1z8Rk1s8s3RZ9t1X0cM5YpYc1I3uV8gkWGLqgXbWmJJ4rB6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-v2kU5g5d3i6l2l7w2jQ9VHiWk1MUpTI9m9g8S2aT0dKqzHcD2QA+YQO8hZQfKXxWQk3QK2w7rC1vWwz7JX4zqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    async function downloadResumePDF() {
-      const { jsPDF } = window.jspdf;
-      const pageEl = document.querySelector('.page');
-      const canvas = await html2canvas(pageEl, { scale: 2, backgroundColor: '#ffffff' });
-
-      const imgData = canvas.toDataURL('image/png');
-
-      // US Letter portrait (change to 'a4' if you prefer)
-      const pdf = new jsPDF({ unit: 'pt', format: 'letter', orientation: 'portrait' });
-
-      const pageWidth = pdf.internal.pageSize.getWidth();   // 612pt
-      const pageHeight = pdf.internal.pageSize.getHeight(); // 792pt
-
-      const imgWidth = pageWidth;                            // fit to width
-      const imgHeight = canvas.height * (imgWidth / canvas.width);
-
-      // If taller than one page, scale to fit height
-      const scaledHeight = imgHeight > pageHeight ? pageHeight : imgHeight;
-      const scaledWidth = imgHeight > pageHeight ? canvas.width * (scaledHeight / canvas.height) : imgWidth;
-
-      // Center horizontally if scaled by height
-      const x = (pageWidth - scaledWidth) / 2;
-      const y = 20; // small top margin
-
-      pdf.addImage(imgData, 'PNG', x, y, scaledWidth, scaledHeight, undefined, 'FAST');
-      pdf.save('Mason_Day_Resume.pdf');
-  }
-</script>
 </body>
 </html>
