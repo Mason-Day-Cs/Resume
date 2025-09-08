@@ -105,48 +105,34 @@
   }
 
   /* Print styles */
-/* --- SAVE-AS-PDF OPTIMIZATION (one-page, clean) --- */
-@media print {
-  /* Page size + margins for Save as PDF */
-  @page {
-    size: Letter;                 
-    margin: 10mm;                 
+  @media print {
+    @page {
+      size: Letter;
+      margin: 10mm;
+    }
+    html, body {
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 13.5px;
+      line-height: 1.3;
+      -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+    }
+    .page {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+    .section,
+    .job,
+    .edu,
+    .project {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    h1, h2, h3 { page-break-after: avoid; }
+    .cta { display: none !important; }
+    a, a:visited { color: inherit; text-decoration: none; }
   }
-
-  /* Slightly tighter typography for PDF only */
-  html, body {
-    background: #fff !important;
-    color: #000 !important;
-    font-size: 13.5px;            
-    line-height: 1.3;
-    -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-  }
-
-  /* Remove extra outer padding so content fits */
-  .page {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  /* Keep blocks together; avoid awkward splits */
-  .section,
-  .job,
-  .edu,
-  .project {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Keep headings with the content that follows */
-  h1, h2, h3 { page-break-after: avoid; }
-
-  /* Hide on-screen-only elements */
-  .cta { display: none !important; }
-
-  /* Make links look like plain text in PDF */
-  a, a:visited { color: inherit; text-decoration: none; }
-}
 </style>
 </head>
 <body>
@@ -158,48 +144,59 @@
       <span>Atlanta, GA</span> •
       <a href="tel:+17722247015">772-224-7015</a> •
       <a href="mailto:masondaycs@gmail.com">masondaycs@gmail.com</a> •
-      <a href="https://github.com/Mason-Day-Cs">github.com/Mason-Day-Cs</a>•
-      <a href="https://www.linkedin.com/in/mason-day-48024b380/ target="_blank">LinkedIn</a
+      <a href="https://github.com/Mason-Day-Cs" target="_blank" rel="noopener">github.com/Mason-Day-Cs</a> •
+      <a href="https://www.linkedin.com/in/mason-day-48024b380/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </header>
 
   <section class="section">
     <h2>Summary</h2>
     <p>
-      Recent Computer Science graduate with hands-on experience in SQL, Excel, and Tableau for data cleaning, analysis, and visualization. 
-      Built portfolio projects focused on turning raw data into accurate, actionable insights. 
-      Known for being detail-oriented, adaptable, and quick to learn in fast-paced environments. 
-      Excited to bring strong problem-solving skills, customer-service mindset, and technical expertise to an Associate Analyst role at Warner Bros. Discovery.
+      Recent B.A. in Computer Science (FSU, 2024) with a strong foundation in SQL, Power BI, Tableau, Excel, and Python.
+      Completed portfolio projects transforming raw data into actionable insights through rigorous data cleaning, modeling, and visualization.
+      Detail-oriented, adaptable, and committed to continuous learning. Ready to apply analytical rigor, clear communication, and curiosity in an entry-level Data Analyst role.
     </p>
   </section>
 
   <section class="section">
     <h2>Technical Skills</h2>
     <div class="chips">
-      <div class="chip">Excel</div>
       <div class="chip">SQL</div>
+      <div class="chip">Power BI</div>
       <div class="chip">Tableau</div>
+      <div class="chip">Excel</div>
       <div class="chip">Python</div>
-      <div class="chip">Data Cleaning & Visualization</div>
-      <div class="chip">C++</div>
-      <div class="chip">C#</div>
-      <div class="chip">HTML</div>
+      <div class="chip">Data Cleaning &amp; Visualization</div>
       <div class="chip">Git/GitHub</div>
     </div>
   </section>
 
   <section class="section">
     <h2>Projects</h2>
-  
+
     <div class="project">
-      <h3>Café Sales Cleaning & Dashboard <span class="when">(GitHub)</span></h3>
+      <h3>Café Sales Cleaning &amp; Dashboard <span class="when">(GitHub)</span></h3>
       <ul>
         <li>Cleaned and standardized café sales dataset (10,000+ rows) using SQL.</li>
         <li>Created KPIs including daily revenue, top-selling products, and seasonal performance trends.</li>
         <li>Built an interactive Tableau dashboard for managers to track growth and customer behavior.</li>
-        <li><a href="https://github.com/Mason-Day-Cs/Cafe-Sales-Cleaning-Project" target="_blank">View on GitHub</a></li>
+        <li><a href="https://github.com/Mason-Day-Cs/Cafe-Sales-Cleaning-Project" target="_blank" rel="noopener">View on GitHub</a></li>
       </ul>
     </div>
+
+    <div class="project">
+      <h3>H-1B Visa Analysis (2025) — SQL &amp; Power BI <span class="when">(GitHub)</span></h3>
+      <ul>
+        <li>Ingested and cleaned 2025 H-1B visa application data with SQL to standardize job titles, employers, and locations.</li>
+        <li>Built a Power BI report with pages for Overview, Geography, and Trends to surface approval rates, top occupations, and employer activity.</li>
+        <li>Wrote SQL transformations and DAX measures for KPIs (e.g., approval rate, median offered wage, petitions by state and SOC code).</li>
+        <li>
+          <!-- Replace this link with your actual repo URL when ready -->
+          <a href="https://github.com/Mason-Day-Cs" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+      </ul>
+    </div>
+
   </section>
 
   <section class="section">
@@ -219,20 +216,20 @@
     <div class="job">
       <h3>The Monroe • Craft Bartender <span class="when">Jul 2024 – Jul 2025</span></h3>
       <ul>
-        <li>Solved problems in real time and adapting to unexcpected challenges</li>
-        <li>Collaborated in a high-volume team to deliver consistent service.</li>
-         <li>Built resilience and attention to detail</li>
+        <li>Adapted to real-time challenges and solved problems efficiently in a fast-paced, high-volume environment.</li>
+        <li>Collaborated with a team to deliver consistently high-quality service.</li>
+        <li>Maintained strong attention to detail while multitasking.</li>
       </ul>
     </div>
   </section>
 
-<!-- Save-as-PDF Button -->
-<div class="cta" role="region" aria-label="Resume actions" style="position:sticky;bottom:18px;display:flex;justify-content:flex-end;margin-top:12px">
-  <button class="btn" type="button" onclick="window.print()" aria-label="Save resume as PDF"
-          style="background:#000;color:#fff;border:none;border-radius:6px;padding:8px 12px;font-weight:600;cursor:pointer">
-    Save as PDF
-  </button>
-</div>
+  <!-- Save-as-PDF Button -->
+  <div class="cta" role="region" aria-label="Resume actions" style="position:sticky;bottom:18px;display:flex;justify-content:flex-end;margin-top:12px">
+    <button class="btn" type="button" onclick="window.print()" aria-label="Save resume as PDF">
+      Save as PDF
+    </button>
+  </div>
 </div>
 </body>
 </html>
+
